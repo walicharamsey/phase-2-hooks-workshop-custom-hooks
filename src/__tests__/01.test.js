@@ -1,6 +1,15 @@
+// 01.js
+import { useEffect } from "react";
+
+export function useDocumentTitle(title = "Welcome to the home page!") {
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
+}
+
+// 01.test.js
 import { renderHook, act } from "@testing-library/react-hooks";
-import { useDocumentTitle } from "../exercise/01";
-// import { useDocumentTitle } from "../solution/01";
+import { useDocumentTitle } from "./01";
 
 describe("Exercise 01", () => {
   test("is exported as a named export", () => {
